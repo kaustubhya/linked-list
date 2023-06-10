@@ -66,9 +66,39 @@ public class linked_list {
 
         temp.next = node; // initializing value in this created node
         size++; // lastly, incrementing the size
+        
+    }
 
+    public Node get(int index) {
+        Node node = head;
+        for(int i = 0; i < index; i++) {
+            node = node.next;
+        }
 
+        return node;
+    }
 
+    public int deleteLast() {
+        if (size <= 1) {
+            return deleteFirst();
+        }
+
+        Node secondLast = get(size - 2);
+        int val = tail.value;
+        tail = secondLast;
+        tail.next = null;
+        return val;
+    }
+
+    public int deleteFirst() {
+        int val = head.value;
+        head = head.next;
+        if(head == null) {
+            tail = null;
+        }
+
+        size--;
+        return val;
     }
 
     public void display() {
