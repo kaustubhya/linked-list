@@ -1,11 +1,11 @@
-public class linked_list {
+public class singly_linked_list {
 
     private Node head;
     private Node tail;
 
     private int size;
 
-    public linked_list() {
+    public singly_linked_list() {
         this.size = 0;
     }
 
@@ -69,7 +69,7 @@ public class linked_list {
         
     }
 
-    public Node get(int index) {
+    public Node getValue(int index) {
         Node node = head;
         for(int i = 0; i < index; i++) {
             node = node.next;
@@ -78,12 +78,24 @@ public class linked_list {
         return node;
     }
 
+    public Node findNode(int value) {
+        Node node = head;
+        while(node != null) {
+            if(node.value == value) {
+                return node;
+            }
+            node = node.next;
+        }
+// if no node matches the value
+        return null;
+    }
+
     public int deleteLast() {
         if (size <= 1) {
             return deleteFirst();
         }
 
-        Node secondLast = get(size - 2);
+        Node secondLast = getValue(size - 2);
         int val = tail.value;
         tail = secondLast;
         tail.next = null;
@@ -100,6 +112,25 @@ public class linked_list {
         size--;
         return val;
     }
+
+     public int deleteFromAnIndex(int index) {
+
+        
+            if(index == 0) {
+                return deleteFirst();
+            }
+
+            if(index == size - 1) {
+                return deleteLast();
+            }
+
+            Node previous = getValue(index - 1);
+            int val = previous.next.value;
+
+            previous.next = previous.next.next;
+
+            return val;
+        }
 
     public void display() {
         Node temp = head;
