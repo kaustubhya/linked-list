@@ -41,6 +41,16 @@ public class main {
     listTwo.insertFirst(8);
     listTwo.insertFirst(4);
     listTwo.display();
+
+    listTwo.insertLast(200);
+    listTwo.display();
+
+    listTwo.insertAfterGivenIndex(123, 999);
+    listTwo.display();
+
+    listTwo.insertAfterGivenIndex(200, 00);
+    listTwo.display();
+
     } 
 
 
