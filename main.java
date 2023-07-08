@@ -6,6 +6,10 @@ public class main {
     //  my.add(2);
     //  System.out.println(my);
 
+
+
+
+
     // singly_linked_list list = new singly_linked_list();
 
     // // Add all these values to the start of the previous one.
@@ -32,27 +36,50 @@ public class main {
 
     // System.out.println(list.deleteFromAnIndex(2));
     // list.display();
-    // }
-
-    doubly_linked_list listTwo = new doubly_linked_list();
-    listTwo.insertFirst(45);
-    listTwo.insertFirst(10);
-    listTwo.insertFirst(123);
-    listTwo.insertFirst(8);
-    listTwo.insertFirst(4);
-    listTwo.display();
-
-    listTwo.insertLast(200);
-    listTwo.display();
-
-    listTwo.insertAfterGivenIndex(123, 999);
-    listTwo.display();
-
-    listTwo.insertAfterGivenIndex(200, 00);
-    listTwo.display();
-
-    } 
+    
 
 
 
+
+
+
+    // doubly_linked_list listTwo = new doubly_linked_list();
+    // listTwo.insertFirst(45);
+    // listTwo.insertFirst(10);
+    // listTwo.insertFirst(123);
+    // listTwo.insertFirst(8);
+    // listTwo.insertFirst(4);
+    // listTwo.display();
+
+    // listTwo.insertLast(200);
+    // listTwo.display();
+
+    // listTwo.insertAfterGivenIndex(123, 999);
+    // listTwo.display();
+
+    // listTwo.insertAfterGivenIndex(200, 00);
+    // listTwo.display();
+
+    
+
+
+    circular_linked_list listThree = new circular_linked_list();
+    listThree.insertNode(8);
+
+    listThree.insertNode(9);
+
+    listThree.insertNode(2);
+
+    listThree.insertNode(7);
+
+    listThree.insertNode(17);
+
+    listThree.display();
+
+
+
+    listThree.deleteNode(7);
+    listThree.display();
+
+    }
 }
