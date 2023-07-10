@@ -69,6 +69,33 @@ public class singly_linked_list {
         
     }
 
+// Q.1.
+    // insert using recursion
+
+    public void insertRecursion(int val, int index) {
+       head = insertRec(val, index, head); 
+    }
+
+    private Node insertRec(int val, int index, Node node) {
+        if(index == 0) {
+            // Start from beginning
+            Node temp = new Node(val, node);
+            size++;
+            return temp;
+            // temp = node here
+        }
+
+        node.next = insertRec(val, index - 1, node.next);
+        // don't do index-- because you'll get null pointer exception
+        return node;
+    }
+
+
+
+
+
+
+
     public Node getValue(int index) {
         Node node = head;
         for(int i = 0; i < index; i++) {

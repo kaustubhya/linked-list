@@ -10,32 +10,47 @@ public class main {
 
 
 
-    // singly_linked_list list = new singly_linked_list();
+    singly_linked_list list = new singly_linked_list();
 
-    // // Add all these values to the start of the previous one.
-    // // Here the first value initially is null then we keep 
-    // //adding all these value in the front of it
-    // list.insertFirst(7);
-    // list.insertFirst(3);
-    // list.insertFirst(2);
-    // list.insertFirst(8);
-    // list.insertFirst(25);
+    // Add all these values to the start of the previous one.
+    // Here the first value initially is null then we keep 
+    // adding all these value in the front of it
+    list.insertFirst(7);
+    list.insertFirst(3);
+    list.insertFirst(2);
+    list.insertFirst(8);
+    list.insertFirst(25);
 
-    // list.insertLast(99);
-    // list.insertLast(52);
+    list.insertLast(99);
+    list.insertLast(52);
 
-    // list.insertAtGivenIndex(47, 3);
+    list.insertAtGivenIndex(47, 3);
 
-    // list.display();
+    list.display();
 
-    // System.out.println(list.deleteFirst());
-    // list.display();
+    System.out.println(list.deleteFirst());
+    list.display();
 
-    // System.out.println(list.deleteLast());
-    // list.display();
+    System.out.println(list.deleteLast());
+    list.display();
 
-    // System.out.println(list.deleteFromAnIndex(2));
-    // list.display();
+    System.out.println(list.deleteFromAnIndex(2));
+    list.display();
+
+
+
+
+    // Use this singly linked list method to insert a node at a given index
+    list.insertRecursion(800, 2);
+    list.display();
+   
+    
+
+       }
+}
+
+
+    
     
 
 
@@ -63,23 +78,26 @@ public class main {
     
 
 
-    circular_linked_list listThree = new circular_linked_list();
-    listThree.insertNode(8);
+    // circular_linked_list listThree = new circular_linked_list();
+    // listThree.insertNode(8);
 
-    listThree.insertNode(9);
+    // listThree.insertNode(9);
 
-    listThree.insertNode(2);
+    // listThree.insertNode(2);
 
-    listThree.insertNode(7);
+    // listThree.insertNode(7);
 
-    listThree.insertNode(17);
+    // listThree.insertNode(17);
 
-    listThree.display();
+    // listThree.display();
 
 
 
-    listThree.deleteNode(7);
-    listThree.display();
+    // listThree.deleteNode(7);
+    // listThree.display();
 
-    }
-}
+    // listThree.deleteNode(8);
+    // listThree.display();
+
+
+ 
