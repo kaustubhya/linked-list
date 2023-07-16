@@ -188,7 +188,7 @@ public void duplicateRemoval() {
     while(node.next != null) {
         if(node.value == node.next.value){ 
             node.next = node.next.next;
-            size = size--;
+            size = size = size-1;
         }
 
         else {
@@ -201,18 +201,75 @@ public void duplicateRemoval() {
     
 }
 
-public static void main(String[] args) {
-    singly_linked_list ll = new singly_linked_list();
-    ll.insertLast(1);
-    ll.insertLast(1);
-    ll.insertLast(1);
-    ll.insertLast(2);
-    ll.insertLast(2);
-    ll.insertLast(4);
 
-    ll.display();
-    ll.duplicateRemoval();
-    ll.display();
+public static singly_linked_list merge(singly_linked_list first, singly_linked_list second) {
+    Node f = first.head;
+    Node s = second.head;
+
+    singly_linked_list answerLL = new singly_linked_list();
+
+    while(f != null && s != null) {
+        if(f.value < s.value) {
+            answerLL.insertLast(f.value);
+            f = f.next;
+        }
+
+        else {
+            answerLL.insertLast(s.value);
+            s = s.next;
+        }
+
+    }
+
+    // adding the remaining values
+
+    // only one of the 2 while loops will run
+    while (f != null) {
+        answerLL.insertLast(f.value);
+        f = f.next;
+    }
+
+     while (s != null) {
+        answerLL.insertLast(s.value);
+        s = s.next;
+    }
+
+    return answerLL;
+}
+
+public static void main(String[] args) {
+    
+    // // Q2
+    // singly_linked_list ll = new singly_linked_list();
+    // ll.insertLast(1);
+    // ll.insertLast(1);
+    // ll.insertLast(1);
+    // ll.insertLast(2);
+    // ll.insertLast(2);
+    // ll.insertLast(4);
+
+    // ll.display();
+    // ll.duplicateRemoval();
+    // ll.display();
+
+    singly_linked_list firstLL = new singly_linked_list();
+    singly_linked_list secondLL = new singly_linked_list();
+
+    firstLL.insertLast(1);
+    firstLL.insertLast(3);    
+    firstLL.insertLast(5);
+    firstLL.insertLast(7);
+
+
+    secondLL.insertLast(1);
+    secondLL.insertLast(2);
+    secondLL.insertLast(4);
+    secondLL.insertLast(6);
+
+    singly_linked_list answer = singly_linked_list.merge(firstLL, secondLL);
+    answer.display();
+
+
 
 
 
