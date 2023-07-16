@@ -39,14 +39,14 @@ public class main {
 
 
 
-
-    // Use this singly linked list method to insert a node at a given index
-    list.insertRecursion(800, 2);
-    list.display();
+// // Question 1
+//     // Use this singly linked list method to insert a node at a given index
+//     list.insertRecursion(800, 2);
+//     list.display();
    
-    
 
-       }
+
+   }
 }
 
 

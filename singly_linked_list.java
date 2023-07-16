@@ -69,32 +69,6 @@ public class singly_linked_list {
         
     }
 
-// Q.1.
-    // insert using recursion
-
-    public void insertRecursion(int val, int index) {
-       head = insertRec(val, index, head); 
-    }
-
-    private Node insertRec(int val, int index, Node node) {
-        if(index == 0) {
-            // Start from beginning
-            Node temp = new Node(val, node);
-            size++;
-            return temp;
-            // temp = node here
-        }
-
-        node.next = insertRec(val, index - 1, node.next);
-        // don't do index-- because you'll get null pointer exception
-        return node;
-    }
-
-
-
-
-
-
 
     public Node getValue(int index) {
         Node node = head;
@@ -182,6 +156,66 @@ private class Node {
         this.value = value;
         this.next = next;
     }
+}
+
+
+
+// Q.1.
+    // insert using recursion
+
+    public void insertRecursion(int val, int index) {
+       head = insertRec(val, index, head); 
+    }
+
+    private Node insertRec(int val, int index, Node node) {
+        if(index == 0) {
+            // Start from beginning
+            Node temp = new Node(val, node);
+            size++;
+            return temp;
+            // temp = node here
+        }
+
+        node.next = insertRec(val, index - 1, node.next);
+        // don't do index-- because you'll get null pointer exception
+        return node;
+    }
+
+// Question 2
+public void duplicateRemoval() {
+    Node node = head;
+
+    while(node.next != null) {
+        if(node.value == node.next.value){ 
+            node.next = node.next.next;
+            size = size--;
+        }
+
+        else {
+            node = node.next;
+        }
+    }
+
+    tail = node;
+    tail.next = null;
+    
+}
+
+public static void main(String[] args) {
+    singly_linked_list ll = new singly_linked_list();
+    ll.insertLast(1);
+    ll.insertLast(1);
+    ll.insertLast(1);
+    ll.insertLast(2);
+    ll.insertLast(2);
+    ll.insertLast(4);
+
+    ll.display();
+    ll.duplicateRemoval();
+    ll.display();
+
+
+
 }
 }
 
