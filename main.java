@@ -37,6 +37,7 @@ public class main {
     System.out.println(list.deleteFromAnIndex(2));
     list.display();
 
+    
 
 
 // // Question 1

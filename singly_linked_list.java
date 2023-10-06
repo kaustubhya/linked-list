@@ -202,6 +202,10 @@ public void duplicateRemoval() {
 }
 
 
+
+// Question 3
+
+
 public static singly_linked_list merge(singly_linked_list first, singly_linked_list second) {
     Node f = first.head;
     Node s = second.head;
@@ -273,6 +277,9 @@ public static void main(String[] args) {
 
 
 
+}
+
+public void detectCycle(int i) {
 }
 }
 
