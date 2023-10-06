@@ -241,6 +241,78 @@ public static singly_linked_list merge(singly_linked_list first, singly_linked_l
     return answerLL;
 }
 
+
+// Q. 9 Bubble Sort LL
+public void bubbleSort() {
+    bubbleSort(size - 1, 0);
+}
+
+
+public void bubbleSort (int row, int col) {
+    // we use recursion here and start row from size - 1 to 0 and column from 0, here first top row is size - 1 and last bottom row is 0
+
+    if(row < 0 || col < 0) { // edge case
+        System.out.println("Invalid row or col");
+    }
+
+    if(row == 0) {
+        return; // base case + void return type
+    }
+
+    if(col < row) {
+        // elements to be sorted at the beginning of the list
+
+        // get 2 pointers, first and second
+
+        Node first = getValue(col);
+        // col is the current index we are at
+        Node second = getValue(col + 1);
+
+        Node prev = getValue(col - 1);
+        if(first.value > second.value) {
+            // beginning of the list
+            if(first == head) {
+                // swapping 3 cases
+                head = second;
+                first.next = second.next;
+                second.next = first;
+            }
+
+            // end of the list
+            else if(second == tail) {
+                // 4 cases of swap
+                
+
+                // be careful of the order -> left to right
+                prev.next = second;
+                tail = first;
+                first.next = null;
+                second.next = tail;
+            }
+
+            else {
+                // in the middle of the list
+
+                prev.next = second;
+
+                // like the beginning of the list
+                first.next = second.next;
+                second.next = first;
+                
+            }
+            
+        }
+
+        // all values sorted, increase column val via recursion
+        bubbleSort(row, col + 1);
+    }
+    // row becomes smaller than column, i.e. end of line reached
+    
+    // hence move to next row and start from the beginning of the column
+    bubbleSort(row - 1, 0);
+}
+
+
 public static void main(String[] args) {
     
     // // Q2
@@ -275,12 +347,17 @@ public static void main(String[] args) {
 
 
 
-
+    singly_linked_list list5 = new singly_linked_list();
+    for(int i = 7; i > 0; i--) {
+        list5.insertLast(i);
+    }
+    list5.display();
+    list5.bubbleSort();
+    list5.display();
 
 }
 
-public void detectCycle(int i) {
-}
+
 }
 
 

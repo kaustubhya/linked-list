@@ -37,6 +37,9 @@ public class main {
     System.out.println(list.deleteFromAnIndex(2));
     list.display();
 
+
+  
+
     
 
 
@@ -45,9 +48,7 @@ public class main {
 //     list.insertRecursion(800, 2);
 //     list.display();
    
-
-
-   }
+}
 }
 
 
