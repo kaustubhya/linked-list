@@ -27,7 +27,7 @@ public class linked_list_reversal_2 {
         ListNode current = head;
 //         these are the first two reversal pointers
         
-        for(int i = 0; i < left - 1 && current != null; i++) {
+        for(int i = 0; current != null && i < left - 1; i++) {
             // here we actually wanted to go to left - 1 but since i starts from 0, we will go till left - 2, we will put previous there and put current at left - 1 
             prev = current;
             current = current.next;
@@ -42,8 +42,8 @@ public class linked_list_reversal_2 {
         ListNode next = current.next;
         // third reversal pointer
         
-        for(int i = 0; i < right - left + 1 && current != null; i++) {
-                    // current != null - Avoiding null pointer exception
+        for(int i = 0; current != null && i < right - left + 1; i++) {
+            // current != null - Avoiding null pointer exception
 
             current.next = prev;
             prev = current;
@@ -60,7 +60,7 @@ public class linked_list_reversal_2 {
             last.next = prev;
         }
         else {
-            prev = head;
+            head = prev;
         }
         
         newEnd.next = current;
