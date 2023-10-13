@@ -313,6 +313,56 @@ public void bubbleSort (int row, int col) {
 }
 
 
+
+// Q.10 Reversing a Linked List  Using Recursion
+
+private void reverse(Node node) {
+    if(node == tail) {
+        head = tail;
+        return;
+        // base case
+    }
+
+    reverse(node.next);
+    // do it till you reach the tail
+
+    tail.next = node;
+    node = tail;
+    tail.next = null;
+    // these 3 keeps happening recursively till all of list is reversed
+
+}
+
+
+// Q.11 Reversing a Linked List  Using Iteration (In-Place Sorting of Linked List and Reversing it) 
+
+public void reverse() {
+    // using prev, current and next pointers
+    // given only head, no tail
+
+    if(size < 2) {
+        return;
+    }
+
+    Node prev = null;
+    Node current = head;
+    Node next = current.next;
+
+    while(current != null) {
+        current.next = prev;
+        prev = current;
+        current = next;
+
+        if(next != null) {
+            next = next.next;
+        }
+    }
+
+    head = prev;
+
+
+}
+
 public static void main(String[] args) {
     
     // // Q2
